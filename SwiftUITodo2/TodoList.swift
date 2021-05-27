@@ -20,11 +20,15 @@ struct TodoList: View {
     let category: TodoEntity.Category
 
     var body: some View {
-        List {
-            // ForEach構造体
-            ForEach(todoList) { todo in
-                Text(todo.task ?? "no title")
+        VStack {
+            List {
+                // ForEach構造体
+                ForEach(todoList) { todo in
+                    Text(todo.task ?? "no title")
+                }
             }
+            QuickNewTask(category: category)
+                .padding()
         }
     }
 }
