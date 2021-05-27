@@ -22,8 +22,14 @@ struct TodoDetailRow: View {
                 // set: checkedの値を変更するとき → 引数で与えられた$0のIntの値を評価して、Boolで返却
                 self.todo.state = $0 ? TodoEntity.State.done.rawValue : TodoEntity.State.todo.rawValue
             })) {
-                Text(self.todo.task ?? "no title")
-            }
+                if self.todo.state == TodoEntity.State.done.rawValue {
+                    Text(self.todo.task ?? "no title").strikethrough()
+                } else {
+                    Text(self.todo.task ?? "no title")
+                }
+            }.foregroundColor(
+                self.todo.state == TodoEntity.State.done.rawValue ? .secondary : .primary
+            )
         }
     }
 }
@@ -34,7 +40,7 @@ struct TodoDetailRow_Previews: PreviewProvider {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         let newTodo = TodoEntity(context: context)
         newTodo.task = "将来への人間関係づくり"
-        newTodo.state = TodoEntity.State.done.rawValue
+        newTodo.state = TodoEntity.State.todo.rawValue
         newTodo.category = 0
 
         return TodoDetailRow(todo: newTodo)
