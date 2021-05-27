@@ -41,13 +41,23 @@ struct TodoList_Previews: PreviewProvider {
     static let context = container.viewContext
 
     static var previews: some View {
-        // テストデータの全削除
+        // TodoEntityの全テストデータを削除するためのrequest作成
         let request = NSBatchDeleteRequest(fetchRequest: NSFetchRequest(entityName: "TodoEntity"))
+        // 取得したテストデータの全削除
         try! container.persistentStoreCoordinator.execute(request, with: context)
         // データを追加
         TodoEntity.create(in: context,
                           category: .ImpUrg_1st,
-                          task: "テストTodo")
+                          task: "Todo1")
+        TodoEntity.create(in: context,
+                          category: .ImpUrg_1st,
+                          task: "Todo2")
+        TodoEntity.create(in: context,
+                          category: .ImpUrg_1st,
+                          task: "Todo3")
+        TodoEntity.create(in: context,
+                          category: .ImpUrg_1st,
+                          task: "Todo4")
         
         // 作成したcontextをviewに指定する場合、environmentを用いる
         // 設定先 → managedObjectContext
