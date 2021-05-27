@@ -24,7 +24,12 @@ struct NewTask: View {
                     TextField("タスクを入力", text: $task)
                 }
                 Section(header: Toggle(isOn: Binding(isNotNil: $time, defaultValue: Date())) { Text("時間を指定する") }) {
-                    DatePicker(selection: Binding($time, Date()), label: { Text("日時") })
+                    if time != nil {
+                        DatePicker(selection: Binding($time, Date()), label: { Text("日時") })
+                    } else {
+                        Text("時間未設定").foregroundColor(.secondary)
+                    }
+                    
                 }
                 Section(header: Text("操作")) {
                     Button(action: {}) {
