@@ -30,12 +30,10 @@ struct QuickNewTask: View {
                 self.addNewTask()
             })
                 .textFieldStyle(RoundedBorderTextFieldStyle())
-                .foregroundColor(.black)
             Button(action: {
                 self.addNewTask()
             }) {
                 Text("追加")
-                    .foregroundColor(.blue)
             }
             Button(action: {
                 self.cancelTask()

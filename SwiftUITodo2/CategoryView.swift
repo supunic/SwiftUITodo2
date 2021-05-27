@@ -12,25 +12,34 @@ struct CategoryView: View {
     @State var numberObTasks = 0
     @State var showList = false
     @Environment(\.managedObjectContext) var viewContect
+    @State var addNewTask = false
     
     var body: some View {
         VStack(alignment: .leading) {
             Image(systemName: category.image())
-                .font(.largeTitle) // Image systemName で指定した場合fontで大きさを変えられる
+                .font(.largeTitle)
+                    .foregroundColor(.white) // Image systemName で指定した場合fontで大きさを変えられる
                 .sheet(isPresented: $showList) {
                     TodoList(category: self.category)
                         .environment(\.managedObjectContext, self.viewContect)
                 }
             Text(category.toString())
+                .foregroundColor(.white)
             Text("・\(numberObTasks)タスク")
-            Button(action: {}) {
+                .foregroundColor(.white)
+            Button(action: {
+                self.addNewTask = true
+            }) {
                 Image(systemName: "plus")
+                    .foregroundColor(.white)
+            }.sheet(isPresented: $addNewTask) {
+                NewTask(category: self.category.rawValue)
+                    .environment(\.managedObjectContext, viewContect)
             }
             Spacer()
         }
-        .padding()
+            .padding()
         .frame( maxWidth: .infinity, minHeight: 150)
-        .foregroundColor(.white)
         .background(category.color())
         .cornerRadius(20)
         .onTapGesture {
