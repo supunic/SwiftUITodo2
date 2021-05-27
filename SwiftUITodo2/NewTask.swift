@@ -18,15 +18,22 @@ struct NewTask: View {
             // NavigationViewに対してモディファイアを直接指定するではなく、内包するviewに対して指定する
             
             // Form ... 指定することでデザインが変わる
+            // Form や List には Section を作ることができる
             Form {
-                TextField("タスクを入力", text: $task)
-                DatePicker(selection: $time, label: { Text("日時") })
-                Button(action: {}) {
-                    HStack(alignment: .center) {
-                        Image(systemName: "minus.circle.fill")
-                        Text("キャンセル")
+                Section(header: Text("タスク")) {
+                    TextField("タスクを入力", text: $task)
+                }
+                Section(header: Toggle(isOn: .constant(true)) { Text("時間を指定する") }) {
+                    DatePicker(selection: $time, label: { Text("日時") })
+                }
+                Section(header: Text("操作")) {
+                    Button(action: {}) {
+                        HStack(alignment: .center) {
+                            Image(systemName: "minus.circle.fill")
+                            Text("キャンセル")
+                        }
+                        .foregroundColor(.red)
                     }
-                    .foregroundColor(.red)
                 }
             }
             .navigationBarTitle("タスクの追加")
