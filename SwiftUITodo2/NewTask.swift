@@ -10,6 +10,9 @@ import SwiftUI
 struct NewTask: View {
     @State var task: String = ""
     @State var time: Date? = Date()
+    @State var category: Int16 = TodoEntity.Category.ImpUrg_1st.rawValue
+    
+    var categries: [TodoEntity.Category] = [.ImpUrg_1st, .ImpNUrg_2nd, .NImpUrg_3rd, .NImpNUrg_4th]
 
     var body: some View {
         // 画面遷移の管理で使用する、NavigationLinkと一緒に
@@ -30,6 +33,19 @@ struct NewTask: View {
                         Text("時間未設定").foregroundColor(.secondary)
                     }
                     
+                }
+                Picker(selection: $category, label: Text("種類")) {
+//                    Text("重要かつ緊急").tag(0)
+//                    Text("重要だが緊急ではない").tag(1)
+//                    Text("重要でないが緊急").tag(2)
+//                    Text("重要でも緊急でもない").tag(3)
+                    ForEach(categries, id: \.self) { category in
+                        HStack {
+                            CategoryImage(category)
+                            Text(category.toString())
+                        }
+                        .tag(category.rawValue)
+                    }
                 }
                 Section(header: Text("操作")) {
                     Button(action: {}) {
