@@ -24,7 +24,9 @@ struct TodoList: View {
             List {
                 // ForEach構造体
                 ForEach(todoList) { todo in
-                    Text(todo.task ?? "no title")
+                    if todo.category == self.category.rawValue {
+                        Text(todo.task ?? "no title")
+                    }
                 }
             }
             QuickNewTask(category: category)
@@ -54,13 +56,13 @@ struct TodoList_Previews: PreviewProvider {
                           category: .ImpUrg_1st,
                           task: "Todo1")
         TodoEntity.create(in: context,
-                          category: .ImpUrg_1st,
+                          category: .ImpNUrg_2nd,
                           task: "Todo2")
         TodoEntity.create(in: context,
-                          category: .ImpUrg_1st,
+                          category: .NImpUrg_3rd,
                           task: "Todo3")
         TodoEntity.create(in: context,
-                          category: .ImpUrg_1st,
+                          category: .NImpNUrg_4th,
                           task: "Todo4")
         
         // 作成したcontextをviewに指定する場合、environmentを用いる
