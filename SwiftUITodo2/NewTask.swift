@@ -12,6 +12,9 @@ struct NewTask: View {
     @State var time: Date? = Date()
     @State var category: Int16 = TodoEntity.Category.ImpUrg_1st.rawValue
     
+    // presentationMode ... view の表示制御に使用するオブジェクト（presentationMode に Binding された値として入る）
+    @Environment(\.presentationMode) var presentationMode
+    
     var categries: [TodoEntity.Category] = [.ImpUrg_1st, .ImpNUrg_2nd, .NImpUrg_3rd, .NImpNUrg_4th]
     @Environment(\.managedObjectContext) var viewContext
     
@@ -23,6 +26,7 @@ struct NewTask: View {
             fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
         }
     }
+    
 
     var body: some View {
         // 画面遷移の管理で使用する、NavigationLinkと一緒に
@@ -58,7 +62,9 @@ struct NewTask: View {
                     }
                 }
                 Section(header: Text("操作")) {
-                    Button(action: {}) {
+                    Button(action: {
+                        self.presentationMode.wrappedValue.dismiss()
+                    }) {
                         HStack(alignment: .center) {
                             Image(systemName: "minus.circle.fill")
                             Text("キャンセル")
@@ -74,6 +80,7 @@ struct NewTask: View {
                                   task: self.task,
                                   time: self.time)
                 self.save()
+                self.presentationMode.wrappedValue.dismiss()
             }) { Text("保存") })
         }
     }
