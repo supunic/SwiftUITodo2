@@ -31,6 +31,19 @@ struct TodoDetailRow: View {
                 self.todo.state == TodoEntity.State.done.rawValue ? .secondary : .primary
             )
         }
+        .gesture(DragGesture().onChanged({ value in
+            // 右から左へのスワイプジェスチャー時の処理
+            if value.predictedEndTranslation.width > 200 {
+                if self.todo.state != TodoEntity.State.done.rawValue {
+                    self.todo.state = TodoEntity.State.done.rawValue
+                }
+            // 左から右へのスワイプジェスチャー時の処理
+            } else if value.predictedEndTranslation.width < -200 {
+                if self.todo.state != TodoEntity.State.todo.rawValue {
+                    self.todo.state = TodoEntity.State.todo.rawValue
+                }
+            }
+        }))
     }
 }
 
