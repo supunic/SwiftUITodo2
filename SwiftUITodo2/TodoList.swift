@@ -25,7 +25,7 @@ struct TodoList: View {
                 // ForEach構造体
                 ForEach(todoList) { todo in
                     if todo.category == self.category.rawValue {
-                        Text(todo.task ?? "no title")
+                        TodoDetailRow(todo: todo, hideIcon: true)
                     }
                 }
             }
@@ -53,17 +53,13 @@ struct TodoList_Previews: PreviewProvider {
         try! container.persistentStoreCoordinator.execute(request, with: context)
         // データを追加
         TodoEntity.create(in: context,
-                          category: .ImpUrg_1st,
-                          task: "Todo1")
+                          category: .ImpUrg_1st, task: "炎上プロジェクト")
         TodoEntity.create(in: context,
-                          category: .ImpNUrg_2nd,
-                          task: "Todo2")
+                          category: .ImpNUrg_2nd, task: "自己啓発")
         TodoEntity.create(in: context,
-                          category: .NImpUrg_3rd,
-                          task: "Todo3")
+                          category: .NImpUrg_3rd, task: "意味のない会議")
         TodoEntity.create(in: context,
-                          category: .NImpNUrg_4th,
-                          task: "Todo4")
+                          category: .NImpNUrg_4th, task: "暇つぶし")
         
         // 作成したcontextをviewに指定する場合、environmentを用いる
         // 設定先 → managedObjectContext
