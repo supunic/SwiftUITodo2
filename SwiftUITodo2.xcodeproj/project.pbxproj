@@ -23,6 +23,7 @@
 		45CE0416265FA0240059E5AA /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CE040E265FA0240059E5AA /* UserView.swift */; };
 		45CE0417265FA0240059E5AA /* QuickNewTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CE0412265FA0240059E5AA /* QuickNewTask.swift */; };
 		45CE0419265FADE40059E5AA /* TodoDetailRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CE0418265FADE40059E5AA /* TodoDetailRow.swift */; };
+		45CE041B266049770059E5AA /* NewTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CE041A266049770059E5AA /* NewTask.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		45CE0411265FA0240059E5AA /* TodoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoList.swift; sourceTree = "<group>"; };
 		45CE0412265FA0240059E5AA /* QuickNewTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickNewTask.swift; sourceTree = "<group>"; };
 		45CE0418265FADE40059E5AA /* TodoDetailRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoDetailRow.swift; sourceTree = "<group>"; };
+		45CE041A266049770059E5AA /* NewTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTask.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				45CE0412265FA0240059E5AA /* QuickNewTask.swift */,
 				45CE0411265FA0240059E5AA /* TodoList.swift */,
 				45CE0418265FADE40059E5AA /* TodoDetailRow.swift */,
+				45CE041A266049770059E5AA /* NewTask.swift */,
 				45CE03F9265F9F030059E5AA /* Assets.xcassets */,
 				45CE03FE265F9F030059E5AA /* LaunchScreen.storyboard */,
 				45CE0401265F9F030059E5AA /* Info.plist */,
@@ -192,6 +195,7 @@
 				45CE0415265FA0240059E5AA /* TodoList.swift in Sources */,
 				45CE0417265FA0240059E5AA /* QuickNewTask.swift in Sources */,
 				45CE03F3265F9F020059E5AA /* SceneDelegate.swift in Sources */,
+				45CE041B266049770059E5AA /* NewTask.swift in Sources */,
 				45CE040B265F9F5E0059E5AA /* TodoEntity+Extension.swift in Sources */,
 				45CE0419265FADE40059E5AA /* TodoDetailRow.swift in Sources */,
 				45CE03F5265F9F020059E5AA /* ContentView.swift in Sources */,
