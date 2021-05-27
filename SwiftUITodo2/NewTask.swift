@@ -9,7 +9,7 @@ import SwiftUI
 
 struct NewTask: View {
     @State var task: String = ""
-    @State var time: Date = Date()
+    @State var time: Date? = Date()
 
     var body: some View {
         // 画面遷移の管理で使用する、NavigationLinkと一緒に
@@ -23,8 +23,8 @@ struct NewTask: View {
                 Section(header: Text("タスク")) {
                     TextField("タスクを入力", text: $task)
                 }
-                Section(header: Toggle(isOn: .constant(true)) { Text("時間を指定する") }) {
-                    DatePicker(selection: $time, label: { Text("日時") })
+                Section(header: Toggle(isOn: Binding(isNotNil: $time, defaultValue: Date())) { Text("時間を指定する") }) {
+                    DatePicker(selection: Binding($time, Date()), label: { Text("日時") })
                 }
                 Section(header: Text("操作")) {
                     Button(action: {}) {

@@ -24,6 +24,7 @@
 		45CE0417265FA0240059E5AA /* QuickNewTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CE0412265FA0240059E5AA /* QuickNewTask.swift */; };
 		45CE0419265FADE40059E5AA /* TodoDetailRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CE0418265FADE40059E5AA /* TodoDetailRow.swift */; };
 		45CE041B266049770059E5AA /* NewTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CE041A266049770059E5AA /* NewTask.swift */; };
+		45CE041E26604DF90059E5AA /* Binding+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CE041D26604DF90059E5AA /* Binding+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		45CE0412265FA0240059E5AA /* QuickNewTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickNewTask.swift; sourceTree = "<group>"; };
 		45CE0418265FADE40059E5AA /* TodoDetailRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoDetailRow.swift; sourceTree = "<group>"; };
 		45CE041A266049770059E5AA /* NewTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTask.swift; sourceTree = "<group>"; };
+		45CE041D26604DF90059E5AA /* Binding+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 			children = (
 				45CE0408265F9F3D0059E5AA /* Color+Extension.swift */,
 				45CE040A265F9F5E0059E5AA /* TodoEntity+Extension.swift */,
+				45CE041D26604DF90059E5AA /* Binding+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -190,6 +193,7 @@
 				45CE0413265FA0240059E5AA /* CheckBox.swift in Sources */,
 				45CE03F8265F9F020059E5AA /* SwiftUITodo2.xcdatamodeld in Sources */,
 				45CE0409265F9F3D0059E5AA /* Color+Extension.swift in Sources */,
+				45CE041E26604DF90059E5AA /* Binding+Extension.swift in Sources */,
 				45CE03F1265F9F020059E5AA /* AppDelegate.swift in Sources */,
 				45CE040D265F9F780059E5AA /* CategoryImage.swift in Sources */,
 				45CE0415265FA0240059E5AA /* TodoList.swift in Sources */,
