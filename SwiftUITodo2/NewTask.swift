@@ -13,6 +13,16 @@ struct NewTask: View {
     @State var category: Int16 = TodoEntity.Category.ImpUrg_1st.rawValue
     
     var categries: [TodoEntity.Category] = [.ImpUrg_1st, .ImpNUrg_2nd, .NImpUrg_3rd, .NImpNUrg_4th]
+    @Environment(\.managedObjectContext) var viewContext
+    
+    fileprivate func save() {
+        do {
+            try self.viewContext.save()
+        } catch {
+            let nserror = error as NSError
+            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+        }
+    }
 
     var body: some View {
         // 画面遷移の管理で使用する、NavigationLinkと一緒に
@@ -58,12 +68,22 @@ struct NewTask: View {
                 }
             }
             .navigationBarTitle("タスクの追加")
+            .navigationBarItems(trailing: Button(action: {
+                TodoEntity.create(in: self.viewContext,
+                                  category: TodoEntity.Category(rawValue: self.category) ?? .ImpUrg_1st,
+                                  task: self.task,
+                                  time: self.time)
+                self.save()
+            }) { Text("保存") })
         }
     }
 }
 
 struct NewTask_Previews: PreviewProvider {
+    static let context = (UIApplication.shared.delegate as! AppDelegate)
+        .persistentContainer.viewContext
+
     static var previews: some View {
-        NewTask()
+        NewTask().environment(\.managedObjectContext, context)
     }
 }
