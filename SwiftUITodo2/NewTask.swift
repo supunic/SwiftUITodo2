@@ -48,6 +48,7 @@ struct NewTask: View {
                     }
                     
                 }
+                // 自動的に画面遷移が実装される ← SwiftUIの特徴
                 Picker(selection: $category, label: Text("種類")) {
 //                    Text("重要かつ緊急").tag(0)
 //                    Text("重要だが緊急ではない").tag(1)

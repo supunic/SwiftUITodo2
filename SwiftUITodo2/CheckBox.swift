@@ -15,6 +15,7 @@ struct CheckBox<Label>: View where Label: View{
 //    @State var checked: Bool = false
     
     // @Binding アノテーション → 親のviewと値を共有したいときに使用する
+    //                        CheckBox view 内部から checked の値を更新できるようになる
     // .constant(false)でBinding型のBool値を定義できる
     @Binding var checked: Bool
     
@@ -25,7 +26,7 @@ struct CheckBox<Label>: View where Label: View{
     // @ViewBuilder → viewを改行で並べて列挙して複数のviewを渡すことができる（クロージャの戻り値に複数のviewを入れられるようになる）
     // @escaping → クロージャに対して付与する属性の1つ、クロージャが関数スコープから抜けても存在し続けるように
     public init(checked: Binding<Bool>, @ViewBuilder label: @escaping () -> Label) {
-        self._checked = checked // Binding構造体に直接アクセスする場合は「 _ 」をつける
+        self._checked = checked // Binding構造体の内部の値（今回の場合Bool値）に直接アクセスする場合は「 _ 」をつける
         self.label = label
     }
     
