@@ -26,7 +26,9 @@ struct TaskToday: View {
             List(todoList) { todo in
                 TodoDetailRow(todo: todo)
             }
-        }.background(Color(UIColor.systemBackground))
+        }
+        .background(Color(UIColor.systemBackground))
+        .clipShape(RoundedCorners(tl: 40, tr: 40, bl: 0, br: 0))
     }
 }
 

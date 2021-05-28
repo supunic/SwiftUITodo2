@@ -28,6 +28,7 @@
 		45CE042026606D590059E5AA /* EditTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CE041F26606D590059E5AA /* EditTask.swift */; };
 		45CE0422266082670059E5AA /* TaskToday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CE0421266082670059E5AA /* TaskToday.swift */; };
 		45CE04242660933C0059E5AA /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CE04232660933C0059E5AA /* Date+Extension.swift */; };
+		45CE042626609ADA0059E5AA /* RoundedCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CE042526609ADA0059E5AA /* RoundedCorners.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		45CE041F26606D590059E5AA /* EditTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTask.swift; sourceTree = "<group>"; };
 		45CE0421266082670059E5AA /* TaskToday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskToday.swift; sourceTree = "<group>"; };
 		45CE04232660933C0059E5AA /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		45CE042526609ADA0059E5AA /* RoundedCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorners.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				45CE041A266049770059E5AA /* NewTask.swift */,
 				45CE041F26606D590059E5AA /* EditTask.swift */,
 				45CE0421266082670059E5AA /* TaskToday.swift */,
+				45CE042526609ADA0059E5AA /* RoundedCorners.swift */,
 				45CE03F9265F9F030059E5AA /* Assets.xcassets */,
 				45CE03FE265F9F030059E5AA /* LaunchScreen.storyboard */,
 				45CE0401265F9F030059E5AA /* Info.plist */,
@@ -214,6 +217,7 @@
 				45CE040B265F9F5E0059E5AA /* TodoEntity+Extension.swift in Sources */,
 				45CE0419265FADE40059E5AA /* TodoDetailRow.swift in Sources */,
 				45CE03F5265F9F020059E5AA /* ContentView.swift in Sources */,
+				45CE042626609ADA0059E5AA /* RoundedCorners.swift in Sources */,
 				45CE0414265FA0240059E5AA /* CategoryView.swift in Sources */,
 				45CE04242660933C0059E5AA /* Date+Extension.swift in Sources */,
 			);
