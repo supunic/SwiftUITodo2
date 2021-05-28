@@ -43,7 +43,7 @@ struct TodoList_Previews: PreviewProvider {
     // project 作成時にAppDelegateが自動生成されている
 
     static let container = (UIApplication.shared.delegate as! AppDelegate)
-    .persistentContainer
+        .persistentContainer
     static let context = container.viewContext
 
     static var previews: some View {
