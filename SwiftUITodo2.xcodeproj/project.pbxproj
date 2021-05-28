@@ -25,6 +25,7 @@
 		45CE0419265FADE40059E5AA /* TodoDetailRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CE0418265FADE40059E5AA /* TodoDetailRow.swift */; };
 		45CE041B266049770059E5AA /* NewTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CE041A266049770059E5AA /* NewTask.swift */; };
 		45CE041E26604DF90059E5AA /* Binding+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CE041D26604DF90059E5AA /* Binding+Extension.swift */; };
+		45CE042026606D590059E5AA /* EditTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CE041F26606D590059E5AA /* EditTask.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		45CE0418265FADE40059E5AA /* TodoDetailRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoDetailRow.swift; sourceTree = "<group>"; };
 		45CE041A266049770059E5AA /* NewTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTask.swift; sourceTree = "<group>"; };
 		45CE041D26604DF90059E5AA /* Binding+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+Extension.swift"; sourceTree = "<group>"; };
+		45CE041F26606D590059E5AA /* EditTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTask.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 				45CE0411265FA0240059E5AA /* TodoList.swift */,
 				45CE0418265FADE40059E5AA /* TodoDetailRow.swift */,
 				45CE041A266049770059E5AA /* NewTask.swift */,
+				45CE041F26606D590059E5AA /* EditTask.swift */,
 				45CE03F9265F9F030059E5AA /* Assets.xcassets */,
 				45CE03FE265F9F030059E5AA /* LaunchScreen.storyboard */,
 				45CE0401265F9F030059E5AA /* Info.plist */,
@@ -191,6 +194,7 @@
 			files = (
 				45CE0416265FA0240059E5AA /* UserView.swift in Sources */,
 				45CE0413265FA0240059E5AA /* CheckBox.swift in Sources */,
+				45CE042026606D590059E5AA /* EditTask.swift in Sources */,
 				45CE03F8265F9F020059E5AA /* SwiftUITodo2.xcdatamodeld in Sources */,
 				45CE0409265F9F3D0059E5AA /* Color+Extension.swift in Sources */,
 				45CE041E26604DF90059E5AA /* Binding+Extension.swift in Sources */,
