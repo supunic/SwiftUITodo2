@@ -52,6 +52,8 @@ struct TodoList: View {
                 QuickNewTask(category: category)
                     .padding()
             }
+            .navigationBarTitle(category.toString())
+            .navigationBarItems(trailing: EditButton())
         }
     }
 }
