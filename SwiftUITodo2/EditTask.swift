@@ -12,6 +12,8 @@ struct EditTask: View {
     //                     （画面で入力したと同時に更新される、ただし永続化は別）
     @ObservedObject var todo: TodoEntity
     
+    @State var showingSheet = false
+    
     // presentationMode ... view の表示制御に使用するオブジェクト（presentationMode に Binding された値として入る）
     @Environment(\.presentationMode) var presentationMode
     
@@ -63,7 +65,7 @@ struct EditTask: View {
             }
             Section(header: Text("操作")) {
                 Button(action: {
-                    // wip
+                    self.showingSheet = true
                 }) {
                     HStack(alignment: .center) {
                         Image(systemName: "minus.circle.fill")
@@ -78,6 +80,21 @@ struct EditTask: View {
             self.save()
             self.presentationMode.wrappedValue.dismiss()
         }) { Text("閉じる") })
+        // actionSheet ... 削除確認ダイアログ いずれかのviewに対してactionSheet modifire を実装
+        . actionSheet(isPresented: $showingSheet) {
+            // ActionSheet ... 表示内容を示す構造体
+            ActionSheet(title: Text("タスクの削除"),
+                        message: Text("このタスクを削除します。よろしいですか？"),
+                        buttons: [
+                            // destructive ... 押したら削除されるなど、重要な処理を行う場合のデザイン（赤）
+                            .destructive(Text("削除")) {
+                                self.delete()
+                                self.presentationMode.wrappedValue.dismiss()
+                            },
+                            // cancel ... キャンセルボタン
+                            .cancel(Text("キャンセル"))
+                        ])
+        }
     }
 }
 
