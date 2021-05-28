@@ -14,12 +14,16 @@ struct CategoryView: View {
     @Environment(\.managedObjectContext) var viewContect
     @State var addNewTask = false
     
+    fileprivate func update() {
+        self.numberObTasks = TodoEntity.count(in: self.viewContect, category: self.category)
+    }
+    
     var body: some View {
         VStack(alignment: .leading) {
             Image(systemName: category.image())
                 .font(.largeTitle)
                     .foregroundColor(.white) // Image systemName で指定した場合fontで大きさを変えられる
-                .sheet(isPresented: $showList) {
+                .sheet(isPresented: $showList, onDismiss: { self.update() }) {
                     TodoList(category: self.category)
                         .environment(\.managedObjectContext, self.viewContect)
                 }
@@ -32,7 +36,7 @@ struct CategoryView: View {
             }) {
                 Image(systemName: "plus")
                     .foregroundColor(.white)
-            }.sheet(isPresented: $addNewTask) {
+            }.sheet(isPresented: $addNewTask, onDismiss: { self.update() }) {
                 NewTask(category: self.category.rawValue)
                     .environment(\.managedObjectContext, viewContect)
             }
@@ -46,7 +50,7 @@ struct CategoryView: View {
             self.showList = true
         }
         .onAppear {
-            self.numberObTasks = TodoEntity.count(in: self.viewContect, category: self.category)
+            self.update()
         }
     }
 }
